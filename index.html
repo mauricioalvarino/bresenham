@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graficación de linea</title>
+    <style>
+        body {
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        canvas {
+            border: 1px solid #000;
+            background-color: #fff;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        input{
+            width: 60px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Graficación de linea</h1>
+    </div>
+    <div class="container">
+        <div>
+            <p>Punto A</p>
+            <input type="number" id="x0" placeholder="X0">
+            <input type="number" id="y0" placeholder="Y0">
+        </div>
+        <div>
+            <p>Punto B</p>
+            <input type="number" id="x1" placeholder="X1">
+            <input type="number" id="y1" placeholder="Y1">
+        </div>
+    </div>
+    
+    <div class="container">
+        <button onclick="dibujar()">Graficar</button>
+        <button onclick="limpiar()">Limpiar</button>
+    </div>
+    
+    <div class="container">
+        <div>
+            <canvas id="canvas" width="400" height="400"></canvas>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
