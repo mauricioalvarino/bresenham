@@ -60,7 +60,14 @@ function plot(x, y) {
     // Función para dibujar un punto en el canvas
     const canvas = document.getElementById('canvas');   
     const ctx = canvas.getContext('2d');
-    ctx.fillRect(x, y, 1, 1);
+    const areaH = canvas.height - MARGIN_BOTTOM;
+
+    // Traducir coordenadas lógicas a píxeles del canvas
+    const px = MARGIN_LEFT + x;
+    const py = areaH - y;
+
+    ctx.fillStyle = '#e00';
+    ctx.fillRect(px, py, 2, 2);
 }
 
 
@@ -114,4 +121,9 @@ function limpiar() {
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    dibujarEjes();
 }
+
+window.onload = function() {
+    dibujarEjes();
+};
