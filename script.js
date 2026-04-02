@@ -36,3 +36,18 @@ function bresenham(x0, y0, x1, y1, plot) {
         }
     }
 }
+
+function dibujar() {
+    const x0 = parseInt(document.getElementById('x0').value);
+    const y0 = parseInt(document.getElementById('y0').value);
+    const x1 = parseInt(document.getElementById('x1').value);
+    const y1 = parseInt(document.getElementById('y1').value);
+
+    // Validar que todos los campos tengan valores numéricos
+    if (isNaN(x0) || isNaN(y0) || isNaN(x1) || isNaN(y1)) {
+        alert('Por favor ingresa valores numéricos en todos los campos.');
+        return;
+    }
+
+    bresenham(x0, y0, x1, y1, plot);
+}
