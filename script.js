@@ -1,5 +1,5 @@
-const MARGIN_LEFT = 40;
-const MARGIN_BOTTOM = 40;
+const MARGIN_LEFT = 20;
+const MARGIN_BOTTOM = 20;
 
 function dibujarEjes() {
     const canvas = document.getElementById('canvas');
