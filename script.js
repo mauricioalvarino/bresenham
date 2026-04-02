@@ -93,6 +93,10 @@ function bresenham(x0, y0, x1, y1, plot) {
 
         let e2 = 2 * err;
 
+         // Registrar todos los valores de este paso en la tabla
+        agregarFilaTabla(paso, x0, y0, dx, dy, sx, sy, err, e2);
+        paso++
+        
         // Ajuste en el eje X
         if (e2 > -dy) {
             err -= dy;
