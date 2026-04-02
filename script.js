@@ -79,6 +79,11 @@ function bresenham(x0, y0, x1, y1, plot) {
     let sy = (y0 < y1) ? 1 : -1;
     let err = dx - dy;
 
+     // Limpiar tabla antes de empezar
+    const tbody = document.getElementById('tablaBody');
+    tbody.innerHTML = '';
+    let paso = 0;
+
     while (true) {
         // Dibujar el punto actual
         plot(x0, y0);
@@ -100,6 +105,38 @@ function bresenham(x0, y0, x1, y1, plot) {
             y0 += sy;
         }
     }
+}
+
+/**
+ * Agrega una fila a la tabla HTML con los valores
+ * de cada variable en el paso actual del algoritmo.
+ * Cada fila representa una iteración del while en Bresenham.
+ * @param {number} paso - Número de iteración actual.
+ * @param {number} x0 - Coordenada X en este paso.
+ * @param {number} y0 - Coordenada Y en este paso.
+ * @param {number} dx - Diferencial en X (constante).
+ * @param {number} dy - Diferencial en Y (constante).
+ * @param {number} sx - Dirección del paso en X (constante).
+ * @param {number} sy - Dirección del paso en Y (constante).
+ * @param {number} err - Error acumulado antes del ajuste.
+ * @param {number} e2 - Doble del error (2 * err).
+ */
+
+function agregarFilaTabla(paso, x0, y0, dx, dy, sx, sy, err, e2) {
+    const tbody = document.getElementById('tablaBody');
+    const fila = document.createElement('tr');
+    fila.innerHTML = `
+        <td>${paso}</td>
+        <td>${x0}</td>
+        <td>${y0}</td>
+        <td>${dx}</td>
+        <td>${dy}</td>
+        <td>${sx}</td>
+        <td>${sy}</td>
+        <td>${err}</td>
+        <td>${e2}</td>
+    `;
+    tbody.appendChild(fila);
 }
 
 function dibujar() {

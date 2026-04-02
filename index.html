@@ -51,6 +51,37 @@
             <canvas id="canvas" width="400" height="400"></canvas>
         </div>
     </div>
+    <!-- Tabla que muestra paso a paso las variables del algoritmo, esto lo busque por internet para saber como se hacia entonces aqui voy explicando cada codigo que uso segun lo que entendi -->
+     <div class="container">
+        <div>
+            <h3>Tabla de pasos</h3>
+            <!-- 
+                table  = Es el contenedor principal de la tabla
+                thead  = Son los titulos
+                tbody  = Es la sección de datos 
+                th     = Es la celda de título 
+                td     = Es la celda de dato 
+            -->
+            <table id="tablaBresenham" border="1" cellpadding="5" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Paso</th>
+                        <th>x0</th>
+                        <th>y0</th>
+                        <th>dx</th>
+                        <th>dy</th>
+                        <th>sx</th>
+                        <th>sy</th>
+                        <th>err</th>
+                        <th>e2</th>
+                    </tr>
+                </thead>
+                <!-- tbody se rellena automáticamente desde agregarFilaTabla() en JS -->
+                <tbody id="tablaBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
